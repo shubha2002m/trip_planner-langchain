@@ -124,7 +124,7 @@ def city_selection_agent():
         return create_agent(
                 model=llm,
                 tools=[search_internet, scrape_and_summarize_website],
-                system_prompt="You are a City Selection Expert. Select the best city based on weather, season, and prices. You are an expert in analyzing travel data to pick ideal destinations. If the year is not specified in the date range, assume the current year 2026. If only months are given, assume travel during that month. Make reasonable assumptions about dates and provide a clear recommendation without asking for clarification."
+                system_prompt="You are a City Selection Expert. Select the best city based on weather, season, and prices. You are an expert in analyzing travel data to pick ideal destinations. If the year is not specified in the date range, assume the current year. If only months are given, assume travel during that month. Make reasonable assumptions about dates and provide a clear recommendation without asking for clarification."
         )
 
 def local_expert_agent():

@@ -41,7 +41,7 @@ def main():
     # Step 1: City selection
     city_agent = city_selection_agent()
     city_response = city_agent.invoke({
-        "messages": [{"role": "user", "content": f"Select the best city for a trip from {origin} to {cities} during {date_range} with interests: {interests}."}]
+        "messages": [{"role": "user", "content": f"Select the best city for a trip from {origin} to {cities} during {date_range} with interests: {interests}. If year isnt provided assume current year.  Make reasonable assumptions about dates and provide a clear recommendation without asking for clarification."}]
     })
     city_content = extract_ai_message(city_response)
     print("\nBest city selection:\n", city_content)
