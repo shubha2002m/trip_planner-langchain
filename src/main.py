@@ -1,6 +1,7 @@
 
 import sys
 import io
+from pathlib import Path
 from dotenv import load_dotenv
 
 # Set UTF-8 encoding for stdout
@@ -8,8 +9,9 @@ if sys.platform == "win32":
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
     sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
 
-# Load environment variables BEFORE importing trip_agents
-load_dotenv()
+# Load environment variables from root .env (works from src/ or root)
+env_path = Path(__file__).parent.parent / '.env'
+load_dotenv(dotenv_path=env_path)
 
 from langchain_core.messages import AIMessage
 

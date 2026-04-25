@@ -13,12 +13,19 @@ AI-powered trip planning tool that helps you choose the best destination and cre
 
 ```
 trip_planner/
-├── main.py                 # Entry point, orchestrates agent workflow
-├── trip_agents.py          # Agent definitions and tool implementations
-├── pyproject.toml          # Project metadata and dependencies
-├── .env.example            # Template for API keys
-├── .gitignore              # Git configuration
-└── README.md               # This file
+├── src/
+│   ├── main.py                 # Entry point, orchestrates agent workflow
+│   ├── trip_agents.py          # Agent definitions and tool implementations
+│   
+├── demoimages/                 # README demo images
+│   ├── image.png
+│   ├── image-1.png
+│   └── image-2.png
+├── pyproject.toml              # Project metadata and dependencies
+├── poetry.lock                 # Locked dependency versions
+├── .env.example                # Template for API keys
+├── .gitignore                  # Git configuration
+└── README.md                   # This file
 ```
 
 ## Tech Stack
@@ -49,7 +56,7 @@ Get free API keys from:
 
 ### 3. Run the App
 ```bash
-poetry run python main.py
+poetry run python src/main.py
 ```
 
 ## Quick Start
@@ -82,9 +89,9 @@ The app has **3 AI Agents** that work together:
    - Example: "Day 1: Arrive in Shirdi → Visit temples → Local dinner. Budget: $50/day"
    - **Tools:** Search Internet, Scrape Websites, Calculator
 
-![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
+![alt text](demoimages/image.png)
+![alt text](demoimages/image-1.png)
+![alt text](demoimages/image-2.png)
 
 
 ## Key Features
