@@ -1,12 +1,58 @@
 # Trip Planner with LangChain & Gemini
 
-AI-powered trip planning tool that helps you choose the best destination and create an itinerary.
+AI-powered trip planning tool that helps you choose the best destination and create an itinerary using multiple specialized AI agents.
 
-## Quick Start
+## Requirements
+- Python 3.10+
+- Poetry package manager
+- Google Gemini API key (use APIKEY of your prefered model provider, refer https://docs.langchain.com/oss/python/langchain/models)
+- Serper API key (search)
+- Browserless API key (web scraping)
 
+## Project Structure
+
+```
+trip_planner/
+├── main.py                 # Entry point, orchestrates agent workflow
+├── trip_agents.py          # Agent definitions and tool implementations
+├── pyproject.toml          # Project metadata and dependencies
+├── .env.example            # Template for API keys
+├── .gitignore              # Git configuration
+└── README.md               # This file
+```
+
+## Tech Stack
+
+- **LangChain** - Agent orchestration framework
+- **Google Gemini 2.5 Flash Lite** - LLM powering the agents
+- **Serper API** - Internet search capability
+- **Browserless API** - Website scraping capability
+- **Poetry** - Python dependency management
+
+## Setup Instructions
+
+### 1. Install Dependencies
+```bash
+poetry install --no-root
+```
+
+### 2. Configure API Keys
+Copy `.env.example` to `.env` and add your API keys:
+```bash
+cp .env.example .env
+```
+
+Get free API keys from:
+- [Google Gemini API](https://aistudio.google.com/app/apikey)
+- [Serper Search API](https://serper.dev/) (free tier available)
+- [Browserless API](https://www.browserless.io/) (free tier available)
+
+### 3. Run the App
 ```bash
 poetry run python main.py
 ```
+
+## Quick Start
 
 Then answer these prompts:
 - **Where are you traveling from?** → `Mangalore`
@@ -36,23 +82,17 @@ The app has **3 AI Agents** that work together:
    - Example: "Day 1: Arrive in Shirdi → Visit temples → Local dinner. Budget: $50/day"
    - **Tools:** Search Internet, Scrape Websites, Calculator
 
-## Setup
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
 
-1. Create `.env` file with your API keys:
-```
-GOOGLE_API_KEY=your_key_here
-SERPER_API_KEY=your_key_here
-BROWSERLESS_API_KEY=your_key_here
-```
 
-2. Install dependencies:
-```bash
-poetry install --no-root
-```
+## Key Features
 
-## Requirements
-- Python 3.10+
-- Poetry package manager
-- Google Gemini API key (use APIKEY of your prefered model provider, refer https://docs.langchain.com/oss/python/langchain/models)
-- Serper API key (search)
-- Browserless API key (web scraping)
+✅ **Multi-Agent Architecture** - Three specialized agents working together
+✅ **Tool Integration** - Search and web scraping capabilities
+✅ **Smart Context Passing** - Agents share clean context (no tool noise)
+✅ **Flexible Date Handling** - Assumes current year if not specified
+✅ **Real-time Web Data** - Fetches current weather, prices, attraction info
+
+
